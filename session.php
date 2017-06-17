@@ -2,9 +2,9 @@
     session_start();
 
     if (!isset($_SESSION['user_id']) &&
-            $_SERVER['REQUEST_URI'] != '/zajec/registration.php' &&
-            $_SERVER['REQUEST_URI'] != '/zajec/login.php' &&
-            $_SERVER['REQUEST_URI'] != '/zajec/login_check.php')
+            $_SERVER['REQUEST_URI'] != '/drazbisce/registration.php' &&
+            $_SERVER['REQUEST_URI'] != '/drazbisce/login.php' &&
+            $_SERVER['REQUEST_URI'] != '/drazbisce/login_check.php')
     {
         header("location: login.php");
         die();

@@ -10,17 +10,9 @@
     </head>
 
     <body>
-      <div>
+      <div id="page">
         <header>
           <h1>Dražbišče</h1>
-
-          <?php
-            if (isset($_SESSION['username']))
-            {
-              echo '<div id="user">'.$_SESSION['username'].' (<a href="logout.php">Odjava</a>)'.'</div>';
-
-            }
-           ?>
 
           <div id="nav-bar">
                 <div id="nav-bar-wrapper">
@@ -30,8 +22,13 @@
                         <li><a href="help.php">Pomoč</a></li>
                     </ul>
                 </div>
-                <div id="search">
-                </div>
+                <?php
+                  if (isset($_SESSION['username']))
+                  {
+                    echo '<div id="user">'.$_SESSION['username'].' (<a href="logout.php">Odjava</a>)'.'</div>';
+
+                  }
+                 ?>
             </div>
         </header>
         <?php

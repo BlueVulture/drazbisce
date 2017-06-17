@@ -1,11 +1,57 @@
 body {
-    font-family: 'Raleway', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 /*    min-width: 920px;    */
+  background: -webkit-radial-gradient(bottom left, ellipse cover, #7abcff 0%,#4096ee 100%);
 }
+
+#nav-bar {
+  background: -webkit-linear-gradient(45deg, #1e5799 0%,#207cca 40%,#207cca 40%,#2989d8 64%,#7db9e8 100%);
+  height: 50px;
+  padding: 5px 5px 0px 5px;
+  border: solid 1px darkblue;
+}
+
 #nav-bar ul {
-    list-style-type: none;
+  list-style-type: none;
+  margin: 10px 0px 0px 0px;
 }
 
 #nav-bar ul li {
-    display: inline-block;
+  display: inline-block;
+  margin-right: 50px;
+}
+
+#nav-bar a {
+  text-decoration: none;
+  color: white;
+}
+
+#nav-bar a:hover {
+  text-decoration: none;
+  color: red;
+}
+
+#page {
+  width: 90vw;
+  height: 90vh;
+  margin: auto;
+}
+
+#user {
+  float: right;
+  margin-top: -21px;
+}
+
+#user a {
+  text-decoration: underline;
+  color: gold;
+}
+
+#user a:hover {
+  text-decoration: underline;
+  color: red;
+}
+
+#new-ads {
+  border:
 }

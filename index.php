@@ -3,11 +3,11 @@
     require 'database.php'
 ?>
 <div id="content">
-  <div id="new-ads">
+  <div class="data" id="new-ads">
     <p>Najnovejše dražbe</p>
     <hr>
   </div>
-  <div id="special-ads">
+  <div class="data" id="special-ads">
     <p>Kmalu konec...</p>
     <hr>
   </div>

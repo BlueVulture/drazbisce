@@ -19,7 +19,7 @@ if ($result->num_rows > 0)
     header("Location:http://localhost/project-calendar/calendar-page.html");
 }
 
-else 
+else
 {
         echo "something went wrong <br><br>";
         var_dump($password);
@@ -35,5 +35,5 @@ $conn->close();
 //    }
 //} else {
 //    echo "0 results";
-//} 
-// 
+//}
+//

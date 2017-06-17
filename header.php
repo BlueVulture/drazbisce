@@ -25,3 +25,10 @@
                 </div>
             </div>
         </header>
+        <?php
+        if (isset($_SESSION['notice']) && !empty($_SESSION['notice']))
+        {
+            echo '<div id="notice">'.$_SESSION['notice'].'</div>';
+            unset($_SESSION['notice']);
+        }
+        ?>

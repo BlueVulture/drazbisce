@@ -113,3 +113,25 @@ body {
   box-shadow:  2px 2px 2px rgba(0, 0, 0, 0.3);
   color: rgba(10, 10, 10, 0.8);
 }
+
+#desc-input {
+  width: 300px;
+  height: 350px;
+}
+
+#desc-text {
+  vertical-align: top;
+  text-align: left;
+}
+
+#ad-info {
+  width: 50%;
+  padding: 1.5% 0px 1% 0.5%;
+  float: left;
+}
+
+#ad-media {
+  width: 45%;
+  padding: 1.5% 0px 1% 0.5%;
+  float: right;
+}

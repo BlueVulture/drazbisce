@@ -9,6 +9,7 @@ body {
   height: 50px;
   padding: 5px 5px 0px 5px;
   border: solid 1px darkblue;
+  margin-bottom: 20px;
 }
 
 #nav-bar ul {
@@ -21,7 +22,7 @@ body {
   margin-right: 50px;
 }
 
-#nav-bar a {
+#nav-bar-wrapper a {
   text-decoration: none;
   color: white;
 }
@@ -42,9 +43,14 @@ body {
   margin-top: -21px;
 }
 
-#user a {
+#user-logout {
   text-decoration: underline;
   color: gold;
+}
+
+#user-link {
+  text-decoration: none;
+  color: black;
 }
 
 #user a:hover {
@@ -53,5 +59,26 @@ body {
 }
 
 #new-ads {
-  border:
+  padding: 0px 20px 0px 20px;
+  background: #f2f2f2;
+  width: 60%;
+  height: 75%;
+  border: solid 1px darkblue;
+  float: left;
+  box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.3);
+}
+
+#special-ads {
+  padding: 0px 20px 0px 20px;
+  background: #f2f2f2;
+  width: 30%;
+  height: 75%;
+  border: solid 1px darkblue;
+  float: right;
+  box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.3);
+}
+
+#footer {
+  width: 90vw;
+  margin: auto;
 }

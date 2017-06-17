@@ -6,6 +6,18 @@
     </head>
 
     <body>
+      <div>
         <header>
-                
+          <h1>Dražbišče</h1>
+          <div id="nav-bar">
+                <div id="nav-bar-wrapper">
+                    <ul>
+                        <li><a href="#">Domov</a></li>
+                        <li><a href="#">Dražbe</a></li>
+                        <li><a href="#">Pomoč</a></li>
+                    </ul>
+                </div>
+                <div id="search">
+                </div>
+            </div>
         </header>

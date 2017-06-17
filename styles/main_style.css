@@ -2,3 +2,10 @@ body {
     font-family: Verdana;
 /*    min-width: 920px;    */
 }
+#nav-bar ul {
+    list-style-type: none;
+}
+
+#nav-bar ul li {
+    display: inline-block;
+}

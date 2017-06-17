@@ -1,30 +1,4 @@
 body {
-    font-family: Verdana; 
+    font-family: Verdana;
 /*    min-width: 920px;    */
-}
-
-#nav-top-wrapper {
-    width: 920px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-#nav-top {
-    background-color: #004d99;
-    position: fixed;
-    width: 100%;
-    top: 0;
-}
-
-#nav-top ul {
-    list-style-type: none;
-}
-
-#nav-top ul li {
-    display: inline-block;
-}
-
-#nav-top a {
-    color: white;
-    
 }

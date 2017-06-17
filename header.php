@@ -25,9 +25,9 @@
           <div id="nav-bar">
                 <div id="nav-bar-wrapper">
                     <ul>
-                        <li><a href="#">Domov</a></li>
+                        <li><a href="index.php">Domov</a></li>
                         <li><a href="#">Dražbe</a></li>
-                        <li><a href="#">Pomoč</a></li>
+                        <li><a href="help.php">Pomoč</a></li>
                     </ul>
                 </div>
                 <div id="search">

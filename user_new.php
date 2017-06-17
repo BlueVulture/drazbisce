@@ -12,13 +12,15 @@
 
     if (!empty($username) && !empty($email) && !empty($pass1))
     {
-      $query = sprintf("SELECT id FROM uporabniki WHERE email=%s OR upor_ime=%s",
+      $query = sprintf("SELECT id FROM uporabniki WHERE email='%s' OR upor_ime='%s'",
                         mysqli_real_escape_string($conn, $email),
                         mysqli_real_escape_string($conn, $username));
 
       $result = mysqli_query($conn, $query);
 
-      if($result==false)
+      var_dump($result);
+
+      if(mysqli_num_rows($result)<=0)
       {
         if ($pass1 == $pass2)
         {
@@ -39,15 +41,16 @@
             }
             else
             {
-              $query = sprintf("SELECT id, upor_ime FROM uporabniki WHERE email=%s AND upor_ime=%s",
+              $query = sprintf("SELECT id FROM uporabniki WHERE email='%s' AND upor_ime='%s'",
                                 mysqli_real_escape_string($conn, $email),
                                 mysqli_real_escape_string($conn, $username));
 
               $result = mysqli_query($conn, $query);
-
+              var_dump($result);
               $user = mysqli_fetch_array($result);
+              var_dump($user);
               $_SESSION['user_id'] = $user['id'];
-              $_SESSION['username'] = $user['username'];
+              $_SESSION['username'] = $username;
               header("Location: index.php");
             }
         }

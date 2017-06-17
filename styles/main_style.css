@@ -66,15 +66,22 @@ body {
   box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.3);
 }
 
+#content {
+  min-width: 10%;
+  position: relative;
+}
+
 #new-ads {
   width: 60%;
   float: left;
+  position: relative;
   /*margin-right: 5%;*/
 }
 
 #special-ads {
   width: 30%;
   float: right;
+  position: relative;
 }
 
 #footer {

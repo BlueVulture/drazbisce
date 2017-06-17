@@ -59,26 +59,28 @@ body {
 }
 
 .data {
-  padding: 0px 20px 0px 20px;
+  padding: 0px 2% 0px 2%;
   background: #f2f2f2;
   height: 75%;
   border: solid 1px darkblue;
   box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.3);
 }
 
-#content {
+/*#content {
+  width: 100%;
   min-width: 10%;
   position: relative;
-}
+}*/
 
 #new-ads {
   width: 60%;
   float: left;
   position: relative;
-  /*margin-right: 5%;*/
 }
 
+
 #special-ads {
+  display: block;
   width: 30%;
   float: right;
   position: relative;

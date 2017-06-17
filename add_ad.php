@@ -27,8 +27,11 @@
         </table>
       </div>
       <div id="ad-media">
-          <p>Dodajte sliko/-e:</p>
-          <input type="file" name="file">
+          <p>Dodajte sliko/-e (do 5):</p>
+          <div id="pictures-containter">
+          <input type="file" name="file"><br><br>
+          </div>
+          <button onclick="picture_slot();" type="button">Dodaj sliko</button>
 
         </form>
       </div>

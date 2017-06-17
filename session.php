@@ -5,6 +5,7 @@
             $_SERVER['REQUEST_URI'] != '/drazbisce/registration.php' &&
             $_SERVER['REQUEST_URI'] != '/drazbisce/login.php' &&
             $_SERVER['REQUEST_URI'] != '/drazbisce/user_new.php' &&
+            $_SERVER['REQUEST_URI'] != '/drazbisce/help.php' &&
             $_SERVER['REQUEST_URI'] != '/drazbisce/login_action.php')
     {
         header("location: login.php");

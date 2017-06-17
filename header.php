@@ -13,6 +13,14 @@
       <div>
         <header>
           <h1>Dražbišče</h1>
+
+          <?php
+            if (isset($_SESSION['username']))
+            {
+              echo '<div id="user">'.$_SESSION['username'].'</div>';
+            }
+           ?>
+
           <div id="nav-bar">
                 <div id="nav-bar-wrapper">
                     <ul>

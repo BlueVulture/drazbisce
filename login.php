@@ -1,5 +1,5 @@
 <?php
-  require 'session.php';
+  require 'header.php';
  ?>
 
 <head>
@@ -10,9 +10,9 @@
          <div class="login">
              <h1>Prijava</h1>
              <form method="post" action="login_action.php">
-                 <input type="text" name="user-txt" placeholder="Username" required>
-                 <input type="password" name="pass-txt" placeholder="Password" required>
-                 <button type="submit" class="bt bt-h">Login</button>
+                 <input type="text" name="user" placeholder="Uporabnik" required>
+                 <input type="password" name="pass" placeholder="Geslo" required>
+                 <input type="submit" value="Login">
              </form>
 
              <span><a href="registration.php">Registracija</a>

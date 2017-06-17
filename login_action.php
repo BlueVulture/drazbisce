@@ -1,39 +1,39 @@
 <?php
+include_once 'session.php';
+include_once 'database.php';
 
-session_start(); // Starting Session
-$error=''; // Variable To Store Error Message
+$user = $_POST['user'];
+$pass = $_POST['pass'];
 
-require 'database.php';
-
-$username=$_POST['user-txt'];
-$password=sha1($_POST['pass-txt']);
-
-
-$sql = "SELECT * FROM users WHERE (email='$username') AND (pass='$password');";
-$result = $conn->query($sql);
-
-
-if ($result->num_rows > 0)
+if (!empty($user) && !empty($pass))
 {
-//    $_SESSION['login_user']=$username; // Initializing Session
-    header("Location:http://localhost/project-calendar/calendar-page.html");
-}
+    $pass = sha1($pass);
+    $query = sprintf("SELECT * FROM users
+                      WHERE email='%s' AND pass = '%s'",
+                      mysqli_real_escape_string($conn, $email),
+                      mysqli_real_escape_string($conn, $pass));
 
+    $result = mysqli_query($conn, $query);
+
+    if (mysqli_num_rows($result) == 1)
+    {
+        $user = mysqli_fetch_array($result);
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
+        header("location: index.php");
+        die();
+    }
+    else
+    {
+        $_SESSION['notice'] = "Napačno uporabniško ime ali geslo";
+        header("location: login.php");
+        die();
+    }
+}
 else
 {
-        echo "something went wrong <br><br>";
-        var_dump($password);
-
+    header("location: login.php");
+    die();
 }
 
-$conn->close();
-
-//if ($result->num_rows > 0) {
-//    // output data of each row
-//    while($row = $result->fetch_assoc()) {
-//        echo "id: " . $row["id"]. " - Name: " . $row["username"]. " " . $row["password"]. "<br>";
-//    }
-//} else {
-//    echo "0 results";
-//}
-//
+?>

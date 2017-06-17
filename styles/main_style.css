@@ -94,3 +94,22 @@ body {
   width: 90vw;
   margin: auto;
 }
+
+#login input {
+  width: 200px;
+  clear: both;
+  margin-bottom: 1px;
+}
+
+#login button {
+  margin-top: 10px;
+}
+
+#notice {
+  background: -webkit-linear-gradient(45deg, #ff3019 0%,#cf0404 100%);
+  margin-bottom: 10px;
+  padding: 5px 5px 5px 5px;
+  box-shadow: inset 0px 0px 5px rgba(255, 255, 255, 0.3);
+  box-shadow:  2px 2px 2px rgba(0, 0, 0, 0.3);
+  color: rgba(10, 10, 10, 0.8);
+}

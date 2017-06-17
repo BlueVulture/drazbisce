@@ -17,7 +17,8 @@
           <?php
             if (isset($_SESSION['username']))
             {
-              echo '<div id="user">'.$_SESSION['username'].'</div>';
+              echo '<div id="user">'.$_SESSION['username'].'<a href="logout.php">Odjava</a>'.'</div>';
+
             }
            ?>
 

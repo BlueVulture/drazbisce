@@ -18,14 +18,14 @@
 
       $result = mysqli_query($conn, $query);
 
-      if(mysqli_num_rows($result) <= 0)
+      if($result==false)
       {
         if ($pass1 == $pass2)
         {
             $pass1 = sha1($pass1);
 
             $query = sprintf("INSERT INTO uporabniki(upor_ime, geslo, ime, priimek, email)
-                              VALUES ('%s','%s','%s','%s', '%s')",
+                              VALUES ('%s','%s','%s','%s','%s')",
                               mysqli_real_escape_string($conn, $username),
                               mysqli_real_escape_string($conn, $pass1),
                               mysqli_real_escape_string($conn, $first_name),
@@ -34,12 +34,21 @@
 
             if(!mysqli_query($conn, $query))
             {
-                $_SESSION['notice'] = "Neuspešna registracija";
-                header("Location: registration.php");
+              $_SESSION['notice'] = "Neuspešna registracija";
+              header("Location: registration.php");
             }
             else
             {
-                header("Location: index.php");
+              $query = sprintf("SELECT id, upor_ime FROM uporabniki WHERE email=%s AND upor_ime=%s",
+                                mysqli_real_escape_string($conn, $email),
+                                mysqli_real_escape_string($conn, $username));
+
+              $result = mysqli_query($conn, $query);
+
+              $user = mysqli_fetch_array($result);
+              $_SESSION['user_id'] = $user['id'];
+              $_SESSION['username'] = $user['username'];
+              header("Location: index.php");
             }
         }
         else
@@ -48,7 +57,8 @@
             header("Location: registration.php");
         }
       }
-      else{
+      else
+      {
         $_SESSION['notice'] = "Uporabnik s tem uporabniškem imenu ali emailu že obstaja";
         header("Location: registration.php");
       }

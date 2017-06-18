@@ -17,8 +17,11 @@
           <tr><td>Min. cena:</td>
               <td><input type="number" name="min_price"></td>
           </tr>
+    </form>
+
+    <form action="add_ad.php" method="post">
           <tr><td>Tip izdelka:</td>
-              <td><select id="type" name="type" onchange="select_cat()">
+              <td><select id="type" name="type" onchange="this.form.submit()">
                 <option disabled selected value>Izberite tip...</option>
                 <?php
                   $query = "SELECT id, naziv FROM tipi;";
@@ -48,6 +51,11 @@
                  ?>
               </select>
               </td>
+
+        </form>
+
+      </form action="insert_ad" method="post">
+
           </tr>
           <tr><td>Datum konca:</td>
               <td><input type="date" name="date_e" value="<?php echo date('Y-m-d', strtotime(date('Y-m-d'). ' + 30 days')); ?>"

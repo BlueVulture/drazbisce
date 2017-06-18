@@ -5,8 +5,6 @@
     date_default_timezone_set('Europe/Ljubljana');
 ?>
 
-
-
 <div id="content">
   <div class="data" id="ad-form">
     <form action="insert_ad.php" method="post" >
@@ -16,10 +14,10 @@
               <td><input type="text" name="title" required></td>
             </tr>
           <tr><td>Cena:</td>
-              <td><input type="number" name="price" required></td>
+              <td><input type="number" name="price" onchange="min_price();" id="price"required></td>
           </tr>
           <tr><td>Min. cena:</td>
-              <td><input type="number" name="min_price"></td>
+              <td><input type="number" name="min_price" id="min_price"></td>
           </tr>
           <tr><td>Kategorija Izdelka:</td>
               <td><select name="cat" required>

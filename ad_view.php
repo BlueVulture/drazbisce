@@ -11,7 +11,7 @@ $query = "SELECT o.naslov, o.cena, o.datum_z, o.datum_k, o.opis, o.min_cena, k.n
 $result = mysqli_query($conn, $query);
 $ad = mysqli_fetch_array($result);
 
-$query_bid = "SELECT ponuda
+$query_bid = "SELECT ponudba
               FROM ponudbe
               WHERE oglas_id = $ad_id";
 
@@ -27,14 +27,14 @@ $result_bid = mysqli_query($conn, $query_bid);
 
       if($bid = mysqli_fetch_array($result_bid))
       {
-        echo '<p><b>Trenutna ponudba: </b>'.$bid['ponuda'].' €</p>';
+        echo '<p><b>Trenutna ponudba: </b>'.$bid['ponudba'].' €</p>';
       }
       else
       {
         echo '<p><b>Trenutna ponudba: </b>0 €</p>';
       }
 
-      $query_bid = "SELECT ponuda
+      $query_bid = "SELECT ponudba
                     FROM ponudbe
                     WHERE oglas_id = $ad_id AND uporabnik_id = ".$_SESSION['user_id'].";";
 
@@ -42,7 +42,7 @@ $result_bid = mysqli_query($conn, $query_bid);
 
       if($bid = mysqli_fetch_array($result_bid))
       {
-        echo '<p><b>Vaša ponudba: </b>'.$bid['ponuda'].' €</p>';
+        echo '<p><b>Vaša ponudba: </b>'.$bid['ponudba'].' €</p>';
 
       }
       else
@@ -51,6 +51,7 @@ $result_bid = mysqli_query($conn, $query_bid);
       }
 
       echo '<form action="bid.php" method="post">';
+      echo '<input type="hidden" name="id" value="'.$ad_id.'">';
       echo 'Oddajte ponudbo: <input type="number" name="bid"><button type="submit">Pošlji</button>';
       echo '</form>';
       echo '<p id="ad-desc-text">'.$ad['opis'].'</p>';

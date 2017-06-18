@@ -1,11 +1,15 @@
 <?php
     require 'header.php';
-    require 'database.php'
+    require 'database.php';
+
+    date_default_timezone_set('Europe/Ljubljana');
 ?>
+
+
 
 <div id="content">
   <div class="data" id="ad-form">
-    <form action="insert_ad" method="post">
+    <form action="insert_ad.php" method="post" >
       <div id="ad-info">
         <table>
           <tr><td>Naslov:</td>
@@ -17,28 +21,11 @@
           <tr><td>Min. cena:</td>
               <td><input type="number" name="min_price"></td>
           </tr>
-          <tr><td>Tip izdelka:</td>
-              <td><select id="type" name="type" onchange="select_cat()">
-                <option disabled selected value>Izberite tip...</option>
-                <?php
-                  $query = "SELECT id, naziv FROM tipi;";
-                  $result = mysqli_query($conn, $query);
-
-                  while($row = mysqli_fetch_array($result))
-                  {
-                    echo '<option value="'.$row['id'].'">'.$row['naziv'].'</option>';
-                  }
-                 ?>
-              </select>
-              </td>
-          </tr>
           <tr><td>Kategorija Izdelka:</td>
-              <td><select id="cat" name="cat">
+              <td><select name="cat" required>
                 <option disabled selected value>Izberite kategorijo...</option>
                 <?php
-                  $type_id = $_POST['type'];
-
-                  $query = "SELECT id, naziv FROM kategorije WHERE tip_id='$type_id'";
+                  $query = "SELECT id, naziv FROM kategorije;";
                   $result = mysqli_query($conn, $query);
 
                   while($row = mysqli_fetch_array($result))
@@ -56,17 +43,19 @@
           <tr><td id="desc-text">Opis:</td>
               <td><textarea id="desc-input" type="text" name="desc"></textarea></td>
           </tr>
+          <tr><td><button type="reset">Prekliči</button></td>
+              <td><button type="submit">Shrani</button></td>
+          </tr>
         </table>
       </div>
-      <div id="ad-media">
+      <!-- <div id="ad-media">
           <p>Dodajte sliko/-e (do 5):</p>
           <div id="pictures-containter">
-          <input type="file" name="file1"><br><br>
+          <input type="file" name="file"><br><br>
           </div>
           <button onclick="picture_slot();" type="button" id="add-pic-slot">Dodaj sliko</button>
-
         </form>
-      </div>
+      </div> -->
     </from>
   </div>
 </div>

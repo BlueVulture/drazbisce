@@ -147,6 +147,7 @@ body {
 
 #ad-media {
   width: 50%;
+  height: 50%;
   padding: 2.5% 0px 1% 0.5%;
   float: right;
 }
@@ -198,11 +199,17 @@ body {
 
 .oglas {
   background: -webkit-radial-gradient(bottom left, ellipse cover, #7abcff 0%,#4096ee 100%);
-  width: 250px;
+  width: 240px;
   height: 110px;
   display: block;
   padding: 1% 1% 1% 1%;
   margin: 5px 5px 5px 5px;
   float: left;
   border: solid 1px darkblue;
+}
+
+#buttons {
+  bottom: 0;
+  right: 0;
+  float: right;
 }

@@ -101,16 +101,22 @@ $user = mysqli_fetch_array($user_result);
                  class="delete-pic" onclick="return confirm(\'Ali ste prepričani?\');">Izbriši</a>';
              }
              echo '<a data-fancybox="gallery" href="' . $picture['url'] . '">
-                   <img src="' . $picture['url'] . '" alt="slika" width="120" />
+                   <img src="' . $picture['url'] . '" alt="slika" width="120">
                    </a>';
 
              echo '</div>';
          }
      }
      ?>
-     <div id="ad-buttons">
-
-     </div>
+  </div>
+  <div id="buttons">
+    <?php
+    if ($_SESSION['user_id'] == $ad['uporabnik_id'])
+    {
+      echo '<span id="del_ad"><a href="delete_ad.php?id=' . $ad_id . '"><button type="button">Izbriši</button></a>';
+      echo ' <a href="edit_ad.php?id=' . $ad_id . '"><button type="button">Uredi</button></a></span>';
+    }
+    ?>
   </div>
 </div>
 

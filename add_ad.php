@@ -55,7 +55,7 @@
           <button onclick="picture_slot();" type="button" id="add-pic-slot">Dodaj sliko</button>
         </form>
       </div> -->
-    </from>
+    </form>
   </div>
 </div>
 

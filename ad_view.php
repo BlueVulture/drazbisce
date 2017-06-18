@@ -58,7 +58,11 @@ $result_bid = mysqli_query($conn, $query_bid);
      ?>
   </div>
 
-  <div id="ad-pictures">
+  <div id="ad-media">
+    <?php
+      echo 'Oglas velja do: ';
+      echo $ad['datum_k'];
+     ?>
   </div>
 </div>
 

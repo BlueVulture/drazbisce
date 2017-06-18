@@ -117,6 +117,7 @@ body {
 #desc-input {
   width: 300px;
   height: 300px;
+  resize: none;
 }
 
 #desc-text {
@@ -131,10 +132,12 @@ body {
 
 #ad-data {
   width: 45%;
-  padding: 1.5% 0px 1% 0.5%;
+  padding: 0% 0% 1% 0.5%;
   float: left;
 }
 
-#ad-desc-text {
-
+#ad-media {
+  width: 50%;
+  padding: 2.5% 0px 1% 0.5%;
+  float: right;
 }

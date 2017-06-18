@@ -7,6 +7,7 @@
 
 <div id="content">
   <div class="data" id="ad-form">
+    <h2>Dodaj oglas</h2>
     <form action="insert_ad.php" method="post" >
       <div id="ad-info">
         <table>
@@ -14,12 +15,12 @@
               <td><input type="text" name="title" required></td>
             </tr>
           <tr><td>Cena:</td>
-              <td><input type="number" name="price" onchange="min_price();" id="price"required></td>
+              <td><input type="number" name="price" onchange="price_m();" id="price" required></td>
           </tr>
           <tr><td>Min. cena:</td>
               <td><input type="number" name="min_price" id="min_price"></td>
           </tr>
-          <tr><td>Kategorija Izdelka:</td>
+          <tr><td>Kategorija izdelka:</td>
               <td><select name="cat" required>
                 <option disabled selected value>Izberite kategorijo...</option>
                 <?php

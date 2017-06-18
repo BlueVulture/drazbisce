@@ -15,7 +15,7 @@
 //     //insertAdjacentHTML('beforeend', <input type="file" name="file"><br><br>);
 // }
 
-function min_price()
+function price_m()
 {
   var min_price = document.getElementById("min_price");
   var price = document.getElementById("price");
@@ -23,6 +23,7 @@ function min_price()
   if(min_price.value<price.value)
   {
     min_price.min = price.value;
+    min_price.value = price.value;
   }
 
 }

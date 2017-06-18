@@ -15,19 +15,37 @@
               <td><input type="number" name="price" required></td>
           </tr>
           <tr><td>Min. cena:</td>
-              <td><input type="num" name="min_price"></td>
+              <td><input type="number" name="min_price"></td>
           </tr>
           <tr><td>Tip izdelka:</td>
-              <td><select name="type">
+              <td><select id="type" name="type" onchange="select_cat()">
+                <option disabled selected value>Izberite tip...</option>
                 <?php
+                  $query = "SELECT id, naziv FROM tipi;";
+                  $result = mysqli_query($conn, $query);
 
+                  while($row = mysqli_fetch_array($result))
+                  {
+                    echo '<option value="'.$row['id'].'">'.$row['naziv'].'</option>';
+                  }
                  ?>
               </select>
               </td>
           </tr>
           <tr><td>Kategorija Izdelka:</td>
-              <td><td><select name="cat">
+              <td><select id="cat" name="cat">
+                <option disabled selected value>Izberite kategorijo...</option>
+                <?php
+                  $type_id = $_POST['type'];
 
+                  $query = "SELECT id, naziv FROM kategorije WHERE tip_id='$type_id'";
+                  $result = mysqli_query($conn, $query);
+
+                  while($row = mysqli_fetch_array($result))
+                  {
+                    echo '<option value="'.$row['id'].'">'.$row['naziv'].'</option>';
+                  }
+                 ?>
               </select>
               </td>
           </tr>

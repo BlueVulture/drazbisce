@@ -13,7 +13,7 @@ $current_date = date('Y-m-d', $yesterday);
 
 if($search!="" && $category!="")
 {
-  $sql="SELECT o.id, o.naslov, o.cena, k.naziv
+  $sql="SELECT o.id, o.naslov, o.cena, k.naziv, o.prodan
           FROM oglasi o INNER JOIN kategorije k ON k.id=o.kategorija_id
           WHERE o.datum_k > $current_date AND o.naslov LIKE '%$search%'
           AND o.kategorija_id =".(int)$category[0].";";
@@ -23,7 +23,7 @@ if($search!="" && $category!="")
 }
 else
 {
-  $sql = "SELECT o.id, o.naslov, o.cena, k.naziv
+  $sql = "SELECT o.id, o.naslov, o.cena, k.naziv, o.prodan
           FROM oglasi o INNER JOIN kategorije k ON k.id=o.kategorija_id
           WHERE o.datum_k > $current_date";
 
@@ -68,24 +68,27 @@ else
 }
 while ($row = mysqli_fetch_array($result))
 {
-  echo '<div class="oglas">';
-  echo '<a href=ad_view.php?id='.$row['id'].'>';
+    if($row['prodan']!=1)
+    {
+    echo '<div class="oglas">';
+    echo '<a href=ad_view.php?id='.$row['id'].'>';
 
-  $slike = "SELECT * FROM slike WHERE oglas_id = ".$row['id'];
-  $r = mysqli_query($conn, $slike);
-  if (mysqli_num_rows($r) > 0)
-  {
-      $slika = mysqli_fetch_array($r);
-      echo '<img src="'.$slika['url'].'" width="100px" />';
-  }
+    $slike = "SELECT * FROM slike WHERE oglas_id = ".$row['id'];
+    $r = mysqli_query($conn, $slike);
+    if (mysqli_num_rows($r) > 0)
+    {
+        $slika = mysqli_fetch_array($r);
+        echo '<img src="'.$slika['url'].'" width="100px" />';
+    }
 
-  echo '</a>';
-  echo '<a href=ad_view.php?id='.$row['id'].'><h3>'.$row['naslov'].'</h3></a>';
-  echo "<b>".$row['cena']." € </b>";
-  echo '<br>';
-  echo "<i>".$row['naziv']."</i>";
-  echo '<br>';
-  echo '</div>';
+    echo '</a>';
+    echo '<a href=ad_view.php?id='.$row['id'].'><h3>'.$row['naslov'].'</h3></a>';
+    echo "<b>".$row['cena']." € </b>";
+    echo '<br>';
+    echo "<i>".$row['naziv']."</i>";
+    echo '<br>';
+    echo '</div>';
+    }
 }
 ?>
   </div>

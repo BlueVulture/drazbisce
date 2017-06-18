@@ -9,7 +9,7 @@
     // var_dump($current_date);
     // var_dump($tomorrow);
 
-    $sql = "SELECT o.id, o.naslov, o.cena, k.naziv
+    $sql = "SELECT o.id, o.naslov, o.cena, k.naziv, o.prodan
             FROM oglasi o INNER JOIN kategorije k ON k.id=o.kategorija_id
             WHERE o.datum_k > $current_date
             ORDER BY o.datum_z DESC";
@@ -31,6 +31,8 @@
     }
     while ($row = mysqli_fetch_array($result))
     {
+      if($row['prodan']!=1)
+      {
       echo '<div class="oglas">';
       echo '<a href=ad_view.php?id='.$row['id'].'>';
 
@@ -50,11 +52,12 @@
       echo '<br>';
       echo '</div>';
     }
+    }
     ?>
   </div>
 
 <?php
-  $sql = "SELECT o.id, o.naslov, o.cena, k.naziv
+  $sql = "SELECT o.id, o.naslov, o.cena, k.naziv, o.prodan
           FROM oglasi o INNER JOIN kategorije k ON k.id=o.kategorija_id
           WHERE o.datum_k > $current_date AND o.datum_k < '$tomorrow'
           ORDER BY o.datum_k ASC";
@@ -78,6 +81,8 @@
     }
     while ($row = mysqli_fetch_array($result))
     {
+      if($row['prodan']!=1)
+      {
       echo '<div class="oglas">';
       echo '<a href=ad_view.php?id='.$row['id'].'>';
 
@@ -96,6 +101,7 @@
       echo "<i>".$row['naziv']."</i>";
       echo '<br>';
       echo '</div>';
+    }
     }
     ?>
   </div>

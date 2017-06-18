@@ -11,7 +11,7 @@ $query = "SELECT o.naslov, o.cena, o.datum_z, o.datum_k, o.opis, o.min_cena, k.n
 $result = mysqli_query($conn, $query);
 $ad = mysqli_fetch_array($result);
 
-$query_bid = "SELECT ponudba
+$query_bid = "SELECT MAX(ponudba) as ponudba
               FROM ponudbe
               WHERE oglas_id = $ad_id";
 
@@ -39,7 +39,7 @@ $user = mysqli_fetch_array($user_result);
         echo '<p><b>Trenutna ponudba: </b>0 €</p>';
       }
 
-      $query_bid = "SELECT ponudba
+      $query_bid = "SELECT MAX(ponudba) as ponudba
                     FROM ponudbe
                     WHERE oglas_id = $ad_id AND uporabnik_id = ".$_SESSION['user_id'].";";
 

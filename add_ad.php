@@ -37,7 +37,7 @@
           </tr>
           <tr><td>Datum konca:</td>
               <td><input type="date" name="date_e" value="<?php echo date('Y-m-d', strtotime(date('Y-m-d'). ' + 30 days')); ?>"
-                  max="<?php echo date('Y-m-d', strtotime(date('Y-m-d'). ' + 30 days')); ?>" required></td>
+                  max="<?php echo date('Y-m-d', strtotime(date('Y-m-d'). ' + 30 days')); ?>" min="<?php echo date('Y-m-d');?>" required></td>
           </tr>
           <tr><td id="desc-text">Opis:</td>
               <td><textarea id="desc-input" type="text" name="desc"></textarea></td>

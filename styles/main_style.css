@@ -76,6 +76,7 @@ body {
   width: 60%;
   float: left;
   position: relative;
+  overflow: hidden;
 }
 
 #help {
@@ -88,6 +89,8 @@ body {
   width: 30%;
   float: right;
   position: relative;
+  overflow: hidden;
+
 }
 
 #footer {
@@ -196,6 +199,7 @@ body {
 .oglas {
   background: -webkit-radial-gradient(bottom left, ellipse cover, #7abcff 0%,#4096ee 100%);
   width: 250px;
+  height: 110px;
   display: block;
   padding: 1% 1% 1% 1%;
   margin: 5px 5px 5px 5px;

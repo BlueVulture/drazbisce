@@ -40,7 +40,8 @@
                 <?php
                   if (isset($_SESSION['username']))
                   {
-                    echo '<div id="user"><a id="user-link" href="user.php">'.$_SESSION['username'].'</a> (<a id="user-logout" href="logout.php">Odjava</a>)'.'</div>';
+                    echo '<div id="user"><a id="user-link" href="user.php?id='.$_SESSION['user_id'].'">'
+                    .$_SESSION['username'].'</a> (<a id="user-logout" href="logout.php">Odjava</a>)'.'</div>';
                   }
                   else
                   {

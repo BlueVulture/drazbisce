@@ -93,6 +93,7 @@ body {
 #footer {
   width: 90vw;
   margin: auto;
+  margin-top: 10px;
 }
 
 #login input {
@@ -136,8 +137,28 @@ body {
   float: left;
 }
 
+#ad-data a:hover {
+  text-decoration: underline;
+  color: red;
+}
+
 #ad-media {
   width: 50%;
   padding: 2.5% 0px 1% 0.5%;
   float: right;
+}
+
+.pic-wrap {
+  float: left;
+  margin-right: 3px;
+}
+
+.pic-wrap a.delete-pic {
+  visibility: hidden;
+  display: block;
+}
+
+.pic-wrap:hover a.delete-pic {
+  visibility: visible;
+  display: block
 }

@@ -91,7 +91,6 @@ $user = mysqli_fetch_array($user_result);
 
      if (mysqli_num_rows($result) == 0)
      {
-       echo 'dela sam ni slik';
      }
      else
      {

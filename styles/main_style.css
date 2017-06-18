@@ -162,3 +162,43 @@ body {
   visibility: visible;
   display: block
 }
+
+#search {
+  width: 25%;
+  float: left;
+}
+
+#ads-display {
+  overflow: scroll;
+  width: 65%;
+  float: right;
+}
+
+.oglas img {
+  float:left;
+  margin-right: 5px;
+}
+
+.oglas h3 {
+  margin-top: 5px;
+}
+
+.oglas a {
+  text-decoration: none;
+  color: black;
+}
+
+.oglas a:hover {
+  text-decoration: underline;
+  color: red;
+}
+
+.oglas {
+  background: -webkit-radial-gradient(bottom left, ellipse cover, #7abcff 0%,#4096ee 100%);
+  width: 250px;
+  display: block;
+  padding: 1% 1% 1% 1%;
+  margin: 5px 5px 5px 5px;
+  float: left;
+  border: solid 1px darkblue;
+}

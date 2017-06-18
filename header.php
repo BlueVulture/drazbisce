@@ -26,7 +26,7 @@
                         <li><a href="index.php">Domov</a></li>
                         <?php
                           if(isset($_SESSION['user_id'])){
-                            echo '<li><a href="#">Dražbe</a></li>';
+                            echo '<li><a href="ad_list.php">Dražbe</a></li>';
                           }
                          ?>
                         <li><a href="help.php">Pomoč</a></li>

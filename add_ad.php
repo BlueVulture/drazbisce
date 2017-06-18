@@ -17,6 +17,20 @@
           <tr><td>Min. cena:</td>
               <td><input type="num" name="min_price"></td>
           </tr>
+          <tr><td>Tip izdelka:</td>
+              <td><select name="type">
+                <?php
+
+                 ?>
+              </select>
+              </td>
+          </tr>
+          <tr><td>Kategorija Izdelka:</td>
+              <td><td><select name="cat">
+
+              </select>
+              </td>
+          </tr>
           <tr><td>Datum konca:</td>
               <td><input type="date" name="date_e" value="<?php echo date('Y-m-d', strtotime(date('Y-m-d'). ' + 30 days')); ?>"
                   max="<?php echo date('Y-m-d', strtotime(date('Y-m-d'). ' + 30 days')); ?>" required></td>
@@ -29,9 +43,9 @@
       <div id="ad-media">
           <p>Dodajte sliko/-e (do 5):</p>
           <div id="pictures-containter">
-          <input type="file" name="file"><br><br>
+          <input type="file" name="file1"><br><br>
           </div>
-          <button onclick="picture_slot();" type="button">Dodaj sliko</button>
+          <button onclick="picture_slot();" type="button" id="add-pic-slot">Dodaj sliko</button>
 
         </form>
       </div>
